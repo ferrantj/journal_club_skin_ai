@@ -38,8 +38,8 @@ def download_isic_images(out_dir, offset=0, limit=float('inf'), dx=None, batch_s
 
 def download_image(metadata, out_dir, name):
     img_path = "%s/%s.jpg" % (out_dir, name)
-    # Download Image
-    download_url = metadata['urls']['full']
+    # Download Image>
+    download_url = metadata['files']['full']['url']
     img = urlopen(download_url)
     with open(img_path, 'wb') as f:
         f.write(img.read())
